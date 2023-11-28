@@ -4,4 +4,5 @@ type TodoType = {
   completed: boolean;
   important: boolean;
   myDay: boolean;
+  category: string;
 };

@@ -1,3 +1,5 @@
+import AddTodo from "../../components/shared-ui/add-todo";
+import TodoTile from "../../components/shared-ui/todo-tile";
 import { useGetImportantTodosQuery } from "../../redux/slices/todo-api";
 
 const Important = () => {
@@ -11,10 +13,14 @@ const Important = () => {
   }
 
   return (
-    <div>
-      {data?.map((e) => (
-        <div>{e.title}</div>
-      ))}
+    <div className="flex flex-col gap-5">
+      <h1 className="text-white text-2xl">Important</h1>
+      <AddTodo category="important" important={true} myDay={false} />
+      <div>
+        {data?.map((e: TodoType) => (
+          <TodoTile todo={e} key={e.id} />
+        ))}
+      </div>
     </div>
   );
 };

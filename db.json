@@ -1,12 +1,28 @@
 {
   "todos": [
     {
-      "id": 1,
-      "title": "todo 1",
+      "category": "myday",
       "completed": false,
+      "id": "639ba27d-47c6-44a8-9957-9628aaf7bd84",
       "important": false,
       "myDay": true,
-      "createdAt": ""
+      "title": "hello my day task"
+    },
+    {
+      "category": "myday",
+      "completed": true,
+      "id": "4658459e-6283-4866-8fc2-f283b4d76dd7",
+      "important": false,
+      "myDay": true,
+      "title": "your done from my day"
+    },
+    {
+      "category": "myday",
+      "completed": true,
+      "id": "2ba31032-e95c-41ba-9816-87e3ecc5621d",
+      "important": false,
+      "myDay": true,
+      "title": "an impo one from my day"
     }
   ]
 }

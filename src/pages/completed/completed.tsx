@@ -1,3 +1,4 @@
+import TodoTile from "../../components/shared-ui/todo-tile";
 import { useGetCompletedTodosQuery } from "../../redux/slices/todo-api";
 
 const Completed = () => {
@@ -11,10 +12,13 @@ const Completed = () => {
   }
 
   return (
-    <div>
-      {data?.map((e) => (
-        <div>{e.title}</div>
-      ))}
+    <div className="flex flex-col gap-5">
+      <h1 className="text-white text-2xl">Completed</h1>
+      <div>
+        {data?.map((e: TodoType) => (
+          <TodoTile todo={e} key={e.id} />
+        ))}
+      </div>
     </div>
   );
 };
