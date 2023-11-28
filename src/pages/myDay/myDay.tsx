@@ -25,7 +25,9 @@ const MyDay = () => {
           <TodoTile todo={e} key={e.id} />
         ))}
       </div>
-      <h1 className="text-white text-2xl">Completed</h1>
+      {dataCompleted?.length !== 0 && (
+        <h1 className="text-white text-2xl">Completed</h1>
+      )}
       <div>
         {dataCompleted?.map((e: TodoType) => (
           <TodoTile todo={e} key={e.id} />
