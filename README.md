@@ -1,4 +1,4 @@
-#Todo-APP
+# Todo-APP
 
 > React + TypeScript + Redux Toolkit + RTK Query + Tailwind + Vite
 
@@ -23,5 +23,6 @@
 
 ## Install & Run
 
-> `npm install`
-> `npm run dev` > `json-server --watch db.json --port 3002`
+- > `npm install`
+- > `npm run dev`
+- > `json-server --watch db.json --port 3002`
