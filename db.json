@@ -10,7 +10,7 @@
     },
     {
       "category": "myday",
-      "completed": true,
+      "completed": false,
       "id": "4658459e-6283-4866-8fc2-f283b4d76dd7",
       "important": false,
       "myDay": true,
@@ -18,11 +18,19 @@
     },
     {
       "category": "myday",
-      "completed": true,
+      "completed": false,
       "id": "2ba31032-e95c-41ba-9816-87e3ecc5621d",
       "important": false,
       "myDay": true,
       "title": "an impo one from my day"
+    },
+    {
+      "category": "myday",
+      "completed": false,
+      "id": "b955a3c6-8169-4c7d-a486-99b355b16656",
+      "important": true,
+      "myDay": true,
+      "title": "wefwef"
     }
   ]
 }

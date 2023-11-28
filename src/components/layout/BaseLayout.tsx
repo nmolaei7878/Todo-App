@@ -2,7 +2,7 @@ import { NavLink } from "react-router-dom";
 import { AiOutlineStar, AiOutlineCheckCircle } from "react-icons/ai";
 import { WiDaySunny } from "react-icons/wi";
 import { useGetAllTodosQuery } from "../../redux/slices/todo-api";
-import useExtractLenght from "./useExtractLength";
+import useExtractLenght from "./hooks/useExtractLength";
 interface Props {
   children?: React.ReactNode;
 }
@@ -17,7 +17,7 @@ const BaseLayout: React.FC<Props> = (props) => {
   const { Lengths } = useExtractLenght(data ?? []);
 
   return (
-    <div className="bg-gray-800 flex gap-3 min-h-screen w-screen p-2">
+    <div className="bg-[#11100F] flex gap-3 min-h-screen w-screen p-2">
       <div className="w-1/6 min-w-[200px] flex flex-col">
         <NavComponent
           length={Lengths.myDay}
@@ -59,7 +59,7 @@ const NavComponent = ({
   return (
     <NavLink
       className={(navData) =>
-        navData.isActive ? "bg-gray-300 p-2 " : "p-2 hover:bg-gray-200 "
+        navData.isActive ? "bg-[#3A3A39] p-2 " : "p-2 hover:bg-[#3B3A39] "
       }
       to={toWhere}
     >

@@ -3,12 +3,10 @@ import {
   combineReducers,
   PreloadedState,
 } from "@reduxjs/toolkit";
-import todoSlice from "./slices/todo-slice";
 import { todoApi } from "./slices/todo-api";
 
 const rootReducer = combineReducers({
   [todoApi.reducerPath]: todoApi.reducer,
-  todo: todoSlice,
 });
 
 export function setupStore(preloadedState?: PreloadedState<RootState>) {

@@ -15,7 +15,7 @@ const AddTodo: React.FC<AddTodoProps> = ({ important, myDay, category }) => {
   const [title, setTitle] = useState("");
   const [addTodo] = useAddTodoMutation();
 
-  const handleInput = (e: any) => {
+  const handleInput = (e: { key: string }) => {
     if (e.key === "Enter") {
       onAddTodoClicked();
     }
@@ -38,7 +38,7 @@ const AddTodo: React.FC<AddTodoProps> = ({ important, myDay, category }) => {
   };
   return (
     <div>
-      <div className="bg-gray-300 rounded-t-sm p-3  flex items-center gap-3 mt-1">
+      <div className="bg-[#252423] rounded-t-sm p-3  flex items-center gap-3 mt-1">
         <input
           defaultChecked={false}
           id="myinput"
@@ -56,9 +56,9 @@ const AddTodo: React.FC<AddTodoProps> = ({ important, myDay, category }) => {
           className="bg-transparent  focus:border-transparent focus:ring-0 border-transparent focus:outline-none w-full"
         />
       </div>
-      <div className="bg-black w-full h-[0.1rem]"></div>
+      <div className="bg-gray-200 w-full h-[0.1rem]"></div>
 
-      <div className="flex justify-between h-11 items-center w-full pl-3 pr-3 bg-gray-200">
+      <div className="flex justify-between h-11 items-center w-full pl-3 pr-3 bg-[#201F1E]">
         <div className=" rounded-b-sm  flex items-center gap-2 text-xl cursor-pointer">
           <IoIosNotificationsOutline />
           <CiCalendarDate />

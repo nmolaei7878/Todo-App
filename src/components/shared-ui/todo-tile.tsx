@@ -34,16 +34,16 @@ const TodoTile: React.FC<Props> = ({ todo }) => {
       console.log("failure");
     }
   };
-  const handleCheckBox = (e) => {
+  const handleCheckBox = (e: { target: { checked: boolean } }) => {
     onCheckedTodoClicked(e.target.checked);
   };
 
-  const handleStar = (e) => {
+  const handleStar = () => {
     onStarTodoClicked(!todo.important);
   };
 
   return (
-    <div className="bg-gray-300 p-3 rounded-sm flex items-center gap-3 mt-1">
+    <div className="bg-[#252423] p-3 rounded-sm flex items-center gap-3 mt-1">
       <input
         defaultChecked={todo.completed}
         id="myinput"
@@ -52,11 +52,7 @@ const TodoTile: React.FC<Props> = ({ todo }) => {
         onChange={handleCheckBox}
       />
 
-      <input
-        tabIndex={-1}
-        className="bg-transparent focus:border-transparent focus:ring-0 border-transparent focus:outline-none w-full"
-        defaultValue={todo.title}
-      />
+      <h5 className="cursor-pointer w-full h-7">{todo.title}</h5>
       <div
         onClick={handleStar}
         className="cursor-pointer min-w-20 h-5 text-2xl"
