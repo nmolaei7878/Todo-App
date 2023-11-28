@@ -2,35 +2,27 @@
   "todos": [
     {
       "category": "myday",
+      "completed": false,
+      "id": "c307f69b-4f5e-40e2-be6a-852cd26ad0c0",
+      "important": false,
+      "myDay": true,
+      "title": "Add Sorting to web app"
+    },
+    {
+      "category": "myday",
       "completed": true,
-      "id": "639ba27d-47c6-44a8-9957-9628aaf7bd84",
-      "important": false,
+      "id": "fedf406a-86f2-4ff2-9b12-96cfc5d2684e",
+      "important": true,
       "myDay": true,
-      "title": "hello my day task"
+      "title": "add Test files"
     },
     {
       "category": "myday",
-      "completed": false,
-      "id": "4658459e-6283-4866-8fc2-f283b4d76dd7",
-      "important": false,
+      "completed": true,
+      "id": "9152242e-1b11-4a4b-9c06-2e167a33ff07",
+      "important": true,
       "myDay": true,
-      "title": "your done from my day"
-    },
-    {
-      "category": "myday",
-      "completed": false,
-      "id": "2ba31032-e95c-41ba-9816-87e3ecc5621d",
-      "important": false,
-      "myDay": true,
-      "title": "an impo one from my day"
-    },
-    {
-      "category": "myday",
-      "completed": false,
-      "id": "b955a3c6-8169-4c7d-a486-99b355b16656",
-      "important": false,
-      "myDay": true,
-      "title": "wefwef"
+      "title": "Complete the readme"
     }
   ]
 }

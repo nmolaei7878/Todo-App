@@ -22,6 +22,9 @@ const AddTodo: React.FC<AddTodoProps> = ({ important, myDay, category }) => {
   };
 
   const onAddTodoClicked = async () => {
+    if (title === "") {
+      return;
+    }
     try {
       await addTodo({
         category: category,
@@ -39,12 +42,7 @@ const AddTodo: React.FC<AddTodoProps> = ({ important, myDay, category }) => {
   return (
     <div>
       <div className="bg-[#252423] rounded-t-sm p-3  flex items-center gap-3 mt-1">
-        <input
-          defaultChecked={false}
-          id="myinput"
-          type="checkbox"
-          className="bg-gray-200 border-blue-700 text-blue-600  rounded-full w-5 h-5"
-        />
+        <h2 className="text-3xl mb-1">+</h2>
         <input
           value={title}
           onKeyDown={handleInput}

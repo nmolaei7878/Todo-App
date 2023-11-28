@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 
 const extractLength = (list: Array<TodoType>) => {
   const myDayLength = list.filter((item) => item.myDay)?.length;
-
   const completedLength = list.filter((item) => item.completed)?.length;
   const ImportantLength = list.filter((item) => item.important)?.length;
   return {
