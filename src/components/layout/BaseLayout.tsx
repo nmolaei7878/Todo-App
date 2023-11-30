@@ -38,6 +38,7 @@ const BaseLayout: React.FC<Props> = (props) => {
           toWhere="/completed"
         />
       </div>
+
       <div className="w-5/6">{props.children}</div>
     </div>
   );

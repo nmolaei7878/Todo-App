@@ -15,6 +15,11 @@
 
 - is where i write `components` that are common for all pages with diffrent configuration as `props`.
 
+#### Sorting
+
+- re-order after change state to `important`
+- sorting by important
+
 #### Todo-Api
 
 - `CRUD` operation using `RTK-Query`, invalidation of cache and auto `refetch`.

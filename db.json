@@ -1,28 +1,3 @@
 {
-  "todos": [
-    {
-      "category": "myday",
-      "completed": false,
-      "id": "c307f69b-4f5e-40e2-be6a-852cd26ad0c0",
-      "important": false,
-      "myDay": true,
-      "title": "Add Sorting to web app"
-    },
-    {
-      "category": "myday",
-      "completed": true,
-      "id": "fedf406a-86f2-4ff2-9b12-96cfc5d2684e",
-      "important": true,
-      "myDay": true,
-      "title": "add Test files"
-    },
-    {
-      "category": "myday",
-      "completed": true,
-      "id": "9152242e-1b11-4a4b-9c06-2e167a33ff07",
-      "important": true,
-      "myDay": true,
-      "title": "Complete the readme"
-    }
-  ]
+  "todos": []
 }

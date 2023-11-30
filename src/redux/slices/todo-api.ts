@@ -11,8 +11,8 @@ export const todoApi = createApi({
       query: () => "/todos",
       providesTags: ["Todos"],
     }),
-    getMyDayTodos: builder.query<TodoType[], void>({
-      query: () => "/todos?myDay=true&completed=false",
+    getMyDayTodos: builder.query<TodoType[], string>({
+      query: (sort) => `/todos?myDay=true&completed=false${sort}`,
       providesTags: ["Todos"],
     }),
     getMyDayCompletedTodos: builder.query<TodoType[], void>({
