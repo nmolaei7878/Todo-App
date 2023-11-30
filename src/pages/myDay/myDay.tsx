@@ -1,5 +1,4 @@
 import { FaSortAlphaDown, FaSortAlphaUp } from "react-icons/fa";
-
 import AddTodo from "../../components/shared-ui/add-todo";
 import TodoTile from "../../components/shared-ui/todo-tile";
 import {
@@ -7,24 +6,34 @@ import {
   useGetMyDayTodosQuery,
 } from "../../redux/slices/todo-api";
 import DropdownComp from "./components/dropdown";
-import { useAppDispatch, useAppSelector } from "../../hook/hooks";
-import { changeOrder, createUrl } from "../../redux/slices/sort-slice";
+import { useSearchParams } from "react-router-dom";
 const MyDay = () => {
-  const sortSlice = useAppSelector((state) => state.sortSlice);
-  const dispatch = useAppDispatch();
+  const [searchParams, setSearchParams] = useSearchParams();
+  const sortType = searchParams.get("sort");
+  const order = searchParams.get("order");
+  // console.log(state.sort);
+  // let sortType = "";
+  // if (state.sort === "Alphabitcally") {
+  //   sortType = "title";
+  // }
+  // if (state.sort === "Important") {
+  //   sortType = "important";
+  // }
+  // state.url = `&_sort=${sortType}&_order=${state.order}`;
 
   const { data, error, isLoading, refetch } = useGetMyDayTodosQuery(
-    sortSlice.url
+    `&_sort=${sortType}&_order=${order}`
   );
   const { data: dataCompleted } = useGetMyDayCompletedTodosQuery();
 
   const refetchWithSort = async () => {
-    dispatch(createUrl());
     await refetch();
   };
 
   const onChangeOrder = async () => {
-    dispatch(changeOrder());
+    const localOrder = order === "asc" ? "desc" : "asc";
+    searchParams.set("order", localOrder);
+    setSearchParams(searchParams);
     refetchWithSort();
   };
 
@@ -45,11 +54,7 @@ const MyDay = () => {
             onClick={onChangeOrder}
             className="hover:bg-slate-800 rounded-md  cursor-pointer p-[0.45rem] pr-3 pl-3"
           >
-            {sortSlice.order === "asc" ? (
-              <FaSortAlphaDown />
-            ) : (
-              <FaSortAlphaUp />
-            )}
+            {order === "asc" ? <FaSortAlphaDown /> : <FaSortAlphaUp />}
           </div>
         </div>
       </div>

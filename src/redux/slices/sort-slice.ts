@@ -15,16 +15,6 @@ const sortSlice = createSlice({
   name: "sortSlice",
   initialState,
   reducers: {
-    createUrl(state) {
-      let sortType = "";
-      if (state.sort === "Alphabitcally") {
-        sortType = "title";
-      }
-      if (state.sort === "Important") {
-        sortType = "important";
-      }
-      state.url = `&_sort=${sortType}&_order=${state.order}`;
-    },
     changeOrder(state) {
       state.order = state.order === "asc" ? "desc" : "asc";
     },
@@ -34,5 +24,5 @@ const sortSlice = createSlice({
   },
 });
 
-export const { changeOrder, changeSort, createUrl } = sortSlice.actions;
+// export const {  } = sortSlice.actions;
 export default sortSlice.reducer;
