@@ -11,18 +11,17 @@ const MyDay = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const sortType = searchParams.get("sort");
   const order = searchParams.get("order");
-  // console.log(state.sort);
-  // let sortType = "";
-  // if (state.sort === "Alphabitcally") {
-  //   sortType = "title";
-  // }
-  // if (state.sort === "Important") {
-  //   sortType = "important";
-  // }
-  // state.url = `&_sort=${sortType}&_order=${state.order}`;
+
+  let RealSortValue = "";
+  if (sortType === "Alphabitcally") {
+    RealSortValue = "title";
+  }
+  if (sortType === "Important") {
+    RealSortValue = "important";
+  }
 
   const { data, error, isLoading, refetch } = useGetMyDayTodosQuery(
-    `&_sort=${sortType}&_order=${order}`
+    `&_sort=${RealSortValue}&_order=${order}`
   );
   const { data: dataCompleted } = useGetMyDayCompletedTodosQuery();
 

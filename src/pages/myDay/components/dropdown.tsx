@@ -11,11 +11,11 @@ interface Props {
 const items: MenuProps["items"] = [
   {
     label: <div className="text-black">Alphabitcally</div>,
-    key: "title",
+    key: "Alphabitcally",
   },
   {
     label: <div className="text-black">Important</div>,
-    key: "important",
+    key: "Important",
   },
 ];
 
@@ -38,7 +38,7 @@ const DropdownComp: React.FC<Props> = ({ refetchWithSort }) => {
     >
       <div>
         <Space>
-          {sortType}
+          {sortType ?? "Sort By"}
           <DownOutlined />
         </Space>
       </div>
