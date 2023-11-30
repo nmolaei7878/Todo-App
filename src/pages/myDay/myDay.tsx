@@ -1,22 +1,31 @@
-import { useState } from "react";
+import { FaSortAlphaDown, FaSortAlphaUp } from "react-icons/fa";
+
 import AddTodo from "../../components/shared-ui/add-todo";
 import TodoTile from "../../components/shared-ui/todo-tile";
 import {
   useGetMyDayCompletedTodosQuery,
   useGetMyDayTodosQuery,
 } from "../../redux/slices/todo-api";
-import { FaSortAlphaDown, FaSortAlphaUp } from "react-icons/fa";
+import DropdownComp from "./components/dropdown";
+import { useAppDispatch, useAppSelector } from "../../hook/hooks";
+import { changeOrder, createUrl } from "../../redux/slices/sort-slice";
 const MyDay = () => {
-  const [sort, setSort] = useState(true);
+  const sortSlice = useAppSelector((state) => state.sortSlice);
+  const dispatch = useAppDispatch();
 
   const { data, error, isLoading, refetch } = useGetMyDayTodosQuery(
-    `&_sort=important&_order=${sort ? "desc" : "asc"}`
+    sortSlice.url
   );
   const { data: dataCompleted } = useGetMyDayCompletedTodosQuery();
 
-  const handleSort = async () => {
+  const refetchWithSort = async () => {
+    dispatch(createUrl());
     await refetch();
-    setSort((pervState) => !pervState);
+  };
+
+  const onChangeOrder = async () => {
+    dispatch(changeOrder());
+    refetchWithSort();
   };
 
   if (error) {
@@ -30,12 +39,18 @@ const MyDay = () => {
     <div className="flex flex-col gap-5">
       <div className="flex items-center justify-between pr-4 text-sm">
         <h1 className="text-white text-2xl">My Day</h1>
-        <div
-          onClick={handleSort}
-          className="flex items-center gap-2 rounded-md hover:bg-slate-800 cursor-pointer p-1 pr-3 pl-3"
-        >
-          {sort ? <FaSortAlphaUp /> : <FaSortAlphaDown />}
-          <div>Sort</div>
+        <div className="flex items-center ">
+          <DropdownComp refetchWithSort={refetchWithSort} />
+          <div
+            onClick={onChangeOrder}
+            className="hover:bg-slate-800 rounded-md  cursor-pointer p-[0.45rem] pr-3 pl-3"
+          >
+            {sortSlice.order === "asc" ? (
+              <FaSortAlphaDown />
+            ) : (
+              <FaSortAlphaUp />
+            )}
+          </div>
         </div>
       </div>
       <AddTodo category="myday" important={false} myDay={true} />

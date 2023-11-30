@@ -4,9 +4,11 @@ import {
   PreloadedState,
 } from "@reduxjs/toolkit";
 import { todoApi } from "./slices/todo-api";
+import sortSlice from "./slices/sort-slice";
 
 const rootReducer = combineReducers({
   [todoApi.reducerPath]: todoApi.reducer,
+  sortSlice: sortSlice,
 });
 
 export function setupStore(preloadedState?: PreloadedState<RootState>) {

@@ -1,3 +1,52 @@
 {
-  "todos": []
+  "todos": [
+    {
+      "category": "myday",
+      "completed": false,
+      "id": "d94c0316-0cff-46bc-9d1a-8d32f31c77dc",
+      "important": false,
+      "myDay": true,
+      "title": "1. put keyboard on the table"
+    },
+    {
+      "category": "myday",
+      "completed": false,
+      "id": "df091f48-9f10-4771-a407-1e6869921084",
+      "important": true,
+      "myDay": true,
+      "title": "2. stand up"
+    },
+    {
+      "category": "myday",
+      "completed": false,
+      "id": "8e70a0fd-60d6-4967-b018-794c8f26c5ca",
+      "important": true,
+      "myDay": true,
+      "title": "3. put clothes on"
+    },
+    {
+      "category": "myday",
+      "completed": false,
+      "id": "80add25f-9143-4d46-a4b6-6287bb973e60",
+      "important": true,
+      "myDay": true,
+      "title": "4. grab a smoke"
+    },
+    {
+      "category": "myday",
+      "completed": false,
+      "id": "5f66e9c1-f70d-42a4-93ca-87277a54accc",
+      "important": false,
+      "myDay": true,
+      "title": "5. drink some water"
+    },
+    {
+      "category": "myday",
+      "completed": false,
+      "id": "0d72d9ad-e67f-4d9a-b413-ff21357e5d39",
+      "important": false,
+      "myDay": true,
+      "title": "6. go to balcony"
+    }
+  ]
 }
