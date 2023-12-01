@@ -8,6 +8,7 @@ import {
 import DropdownComp from "./components/dropdown";
 import { useSearchParams } from "react-router-dom";
 import CompletedComp from "./components/completed";
+import { Spin } from "antd";
 const MyDay = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const sortType = searchParams.get("sort");
@@ -41,7 +42,7 @@ const MyDay = () => {
     <div>error</div>;
   }
   if (isLoading) {
-    <div>loading</div>;
+    return <Spin className="flex items-center justify-center h-screen" />;
   }
 
   return (

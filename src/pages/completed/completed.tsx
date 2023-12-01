@@ -1,3 +1,4 @@
+import { Spin } from "antd";
 import TodoTile from "../../components/shared-ui/todo-tile";
 import { useGetCompletedTodosQuery } from "../../redux/slices/todo-api";
 
@@ -8,7 +9,7 @@ const Completed = () => {
     <div>error</div>;
   }
   if (isLoading) {
-    <div>loading</div>;
+    return <Spin className="flex items-center justify-center h-screen" />;
   }
 
   return (

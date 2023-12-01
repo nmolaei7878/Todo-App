@@ -1,3 +1,4 @@
+import { Spin } from "antd";
 import AddTodo from "../../components/shared-ui/add-todo";
 import TodoTile from "../../components/shared-ui/todo-tile";
 import { useGetImportantTodosQuery } from "../../redux/slices/todo-api";
@@ -9,7 +10,7 @@ const Important = () => {
     <div>error</div>;
   }
   if (isLoading) {
-    <div>loading</div>;
+    return <Spin className="flex items-center justify-center h-screen" />;
   }
 
   return (
