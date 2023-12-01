@@ -2,7 +2,7 @@
   "todos": [
     {
       "category": "myday",
-      "completed": true,
+      "completed": false,
       "id": "d94c0316-0cff-46bc-9d1a-8d32f31c77dc",
       "important": false,
       "myDay": true,
@@ -42,7 +42,7 @@
     },
     {
       "category": "myday",
-      "completed": true,
+      "completed": false,
       "id": "0d72d9ad-e67f-4d9a-b413-ff21357e5d39",
       "important": false,
       "myDay": true,
