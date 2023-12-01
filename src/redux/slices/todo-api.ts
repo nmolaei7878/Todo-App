@@ -15,6 +15,10 @@ export const todoApi = createApi({
       query: (sort) => `/todos?myDay=true&completed=false${sort}`,
       providesTags: ["Todos"],
     }),
+    searchTodos: builder.query<TodoType[], string>({
+      query: (searchQuery) => `/todos?q=${searchQuery}`,
+      providesTags: ["Todos"],
+    }),
     getMyDayCompletedTodos: builder.query<TodoType[], void>({
       query: () => "/todos?myDay=true&completed=true",
       providesTags: ["Todos"],
@@ -61,6 +65,7 @@ export const todoApi = createApi({
 export const {
   useDeleteTodoMutation,
   useGetAllTodosQuery,
+  useSearchTodosQuery,
   useGetMyDayCompletedTodosQuery,
   useGetCompletedTodosQuery,
   useGetImportantTodosQuery,
