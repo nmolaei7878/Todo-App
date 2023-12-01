@@ -26,7 +26,7 @@
     },
     {
       "category": "myday",
-      "completed": false,
+      "completed": true,
       "id": "80add25f-9143-4d46-a4b6-6287bb973e60",
       "important": true,
       "myDay": true,
@@ -34,7 +34,7 @@
     },
     {
       "category": "myday",
-      "completed": false,
+      "completed": true,
       "id": "5f66e9c1-f70d-42a4-93ca-87277a54accc",
       "important": false,
       "myDay": true,
@@ -42,7 +42,7 @@
     },
     {
       "category": "myday",
-      "completed": false,
+      "completed": true,
       "id": "0d72d9ad-e67f-4d9a-b413-ff21357e5d39",
       "important": false,
       "myDay": true,

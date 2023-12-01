@@ -7,6 +7,7 @@ import {
 } from "../../redux/slices/todo-api";
 import DropdownComp from "./components/dropdown";
 import { useSearchParams } from "react-router-dom";
+import CompletedComp from "./components/completed";
 const MyDay = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const sortType = searchParams.get("sort");
@@ -64,13 +65,13 @@ const MyDay = () => {
         ))}
       </div>
       {dataCompleted?.length !== 0 && (
-        <h1 className="text-white text-2xl">Completed</h1>
+        <CompletedComp
+          count={dataCompleted?.length.toString() ?? ""}
+          children={dataCompleted?.map((e: TodoType) => (
+            <TodoTile todo={e} key={e.id} />
+          ))}
+        />
       )}
-      <div>
-        {dataCompleted?.map((e: TodoType) => (
-          <TodoTile todo={e} key={e.id} />
-        ))}
-      </div>
     </div>
   );
 };
